@@ -1,0 +1,19 @@
+<div id="san-francisco" class="card">
+	<div class="card-header">
+		<!-- INFO -->
+		<div class="left-side">
+		<h2 class="city">{{currentWeather?.name}}</h2>
+		<span class="currently-weather">{{currentWeather?.weather[0]?.description}}</span>
+		<div class="wind">
+			<!--<span class="wind-icon"></span>-->
+			<i class="wind-icon wi wi-strong-wind"></i>{{currentWeather?.wind?.speed | meterSecToKmHour | round}}<span class="mph">km/h</span>
+		</div>
+		<span class="temperature">{{currentWeather?.main?.temp | round}}°c</span>
+		</div>
+		<div class="weather-icon">
+			<i class="wi {{currentWeather?.weather[0]?.id | weatherNameToIcon}}"></i>
+		</div>
+		<!--<div class="header-bg" style="background-image: url(img/san-francisco.jpg)"></div>-->
+		<div class="clearfix"></div>
+	</div>
+</div>

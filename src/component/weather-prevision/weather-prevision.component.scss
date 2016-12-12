@@ -1,0 +1,110 @@
+$previsionBackgroundDate: #555555;
+$titleBackground: #3D6AA2;
+$titleFontColor: #fff;
+
+:host {
+
+    @import './../../../node_modules/weather-icons/sass/weather-icons.scss';
+
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    // margin: 2em;
+    display: block;
+
+    .title {
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        padding: 10px;
+        font-weight: bold;
+        background: $titleBackground;
+        color: $titleFontColor;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .scroller {
+        height: 300px;
+        overflow-y: scroll;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            
+            ol, li {
+                min-height: 35px;
+                line-height: 35px;
+            }
+            ol {
+                background: $previsionBackgroundDate;
+                color: #ffffff;
+                padding: 5px 10px;
+            }
+
+            li {
+                list-style: none;
+                border-top: 1px solid #999999;
+                display: flex;
+                flex-direction: row;
+
+                .hour {
+                    width: 10%;
+                    padding: 0 5px;
+                    font-weight: bold;
+                    font-size: 1.1em;
+                    text-align: center;
+                }
+
+                .icon {
+                    width: 10%;
+
+                     i {
+                        font-size: 200%;
+                        display: block;
+                        height: 100%;
+                        padding: 10%;
+                        line-height: 90%;
+                    }
+
+                    i:hover {
+                        color: red;
+                    }
+                }
+
+                .info {
+                    width: 80%;
+                    padding: 5px;
+
+                    .temp {
+                        display: inline-block;
+                        background: orange;
+                        border-radius: 3px;
+                        padding: 1px 3px;
+                    }
+
+                    p {
+                        padding: 0;
+                        margin: 3px 0;
+                    }
+                }
+
+
+
+
+                .left {
+                    width: 80%;
+                    display: flex;
+
+                }
+
+                
+            }
+
+            li:first-child {
+                border-top: none;
+            }
+        }
+    }
+}
