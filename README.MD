@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'dsu-ng2-weather';
+import { WeatherModule } from 'dsu-ng2-weather';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { SampleModule } from 'dsu-ng2-weather';
     BrowserModule,
 
     // Specify your library as an import
-    LibraryModule
+    WeatherModule
   ],
   providers: [],
   bootstrap: [AppComponent]
