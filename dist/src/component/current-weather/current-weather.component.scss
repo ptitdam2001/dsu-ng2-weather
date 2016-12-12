@@ -1,7 +1,6 @@
 :host {
 
-    // @import './../../../../../node_modules/weather-icons/sass/weather-icons.scss';
-    @import './../../../node_modules/weather-icons/sass/weather-icons.scss';
+    // @import './../../../node_modules/weather-icons/sass/weather-icons.scss';
 
     background-color: #fff;
     width: 100%;
@@ -96,7 +95,7 @@
         display: block;
         line-height: 1em;
     }
-        
+
     .weather-icon {
         position: absolute;
         right: 20px;
