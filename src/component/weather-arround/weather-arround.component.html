@@ -1,0 +1,25 @@
+<div>
+  <div class="title">Arround</div>
+  <div class="card-list" [ngStyle]="listStyle" *ngIf="errorService == false">
+    <div *ngFor="let weather of weatherArround" class="card-list-item">
+      <h2>{{weather?.name}}</h2>
+      <div class="card-content">
+        <div class="description">
+          <span class="currently-weather">{{weather?.weather[0].description}}</span>
+          <div class="wind">
+            <i class="wind-icon wi wi-strong-wind"></i>{{weather?.wind.speed | meterSecToKmHour | round}}<span class="mph">km/h</span>
+          </div>
+          <span class="temperature">{{weather?.main.temp | round}}°c</span>
+        </div>
+        <div class="weather-icon">
+          <i class="wi {{weather?.weather[0].id | weatherNameToIcon}}"></i>
+        </div>
+      </div>
+  </div>
+  <div *ngIf="errorService == true">
+    <p>Provider does not answer</p>
+    <p>
+      <a (click)="reload()" class="btn refresh">Refresh</a>
+    </p>
+  </div>
+</div>
