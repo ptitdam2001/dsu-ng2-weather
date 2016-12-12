@@ -4,7 +4,7 @@ $titleFontColor: #fff;
 
 :host {
 
-    @import './../../../node_modules/weather-icons/sass/weather-icons.scss';
+    // @import './../../../node_modules/weather-icons/sass/weather-icons.scss';
 
     background: #fff;
     width: 100%;
@@ -32,7 +32,7 @@ $titleFontColor: #fff;
         ul {
             padding: 0;
             margin: 0;
-            
+
             ol, li {
                 min-height: 35px;
                 line-height: 35px;
@@ -99,7 +99,7 @@ $titleFontColor: #fff;
 
                 }
 
-                
+
             }
 
             li:first-child {
