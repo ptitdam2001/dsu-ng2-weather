@@ -18,12 +18,13 @@ import { Coordinates } from '../../service/classes';
           <div class="description">
             <span class="currently-weather">{{weather?.weather[0].description}}</span>
             <div class="wind">
-              <i class="wind-icon wi wi-strong-wind"></i>{{weather?.wind.speed | meterSecToKmHour | round}}<span class="mph">km/h</span>
+              <ng2-wi [name]="'strong-wind'" class="wind-icon"></ng2-wi>
+              {{weather?.wind.speed | meterSecToKmHour | round}}<span class="mph">km/h</span>
             </div>
             <span class="temperature">{{weather?.main.temp | round}}°c</span>
           </div>
           <div class="weather-icon">
-            <i class="wi {{weather?.weather[0].id | weatherNameToIcon}}"></i>
+            <ng2-wi [name]="weather?.weather[0].id | weatherNameToIcon" [size]="'2.5'"></ng2-wi>
           </div>
         </div>
     </div>
@@ -33,9 +34,9 @@ import { Coordinates } from '../../service/classes';
         <a (click)="reload()" class="btn refresh">Refresh</a>
       </p>
     </div>
-  </div>`,
+  </div>
+`,
   // styleUrls: [
-  //   './../../../../../node_modules/weather-icons/sass/weather-icons.scss',
   //   './weather-arround.component.scss'
   //   ]
   styles: [
@@ -77,7 +78,6 @@ import { Coordinates } from '../../service/classes';
             :host .card-list .card-list-item .card-content .weather-icon {
               width: 50%;
               text-align: center;
-              font-size: 50px;
               padding: 10px 5px; }
       :host .title {
         height: 30px;

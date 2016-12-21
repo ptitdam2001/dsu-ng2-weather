@@ -2,6 +2,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 
+import { default as Ng2WeatherIconsModule } from 'ng2-weather-icons';
+
 import { OpenWeatherMapService } from './src/service/open-weather-map.service';
 import { WeatherConfig } from './src/weather-config';
 import { CurrentWeatherComponent, WeatherArroundComponent, WeatherPrevisionComponent } from './src/component/index';
@@ -19,7 +21,8 @@ export * from './src/service/open-weather-map.service';
 @NgModule({
   imports: [
     CommonModule,
-    HttpModule
+    HttpModule,
+    Ng2WeatherIconsModule
   ],
   declarations: [
     CurrentWeatherComponent,

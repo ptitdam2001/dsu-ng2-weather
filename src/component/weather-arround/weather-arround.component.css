@@ -36,7 +36,6 @@
         :host .card-list .card-list-item .card-content .weather-icon {
           width: 50%;
           text-align: center;
-          font-size: 50px;
           padding: 10px 5px; }
   :host .title {
     height: 30px;

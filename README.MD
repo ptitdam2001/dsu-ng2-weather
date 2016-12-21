@@ -1,6 +1,8 @@
-# dsu-ng2-weather
+dsu-ng2-weather
+===============
 
-## Installation
+Installation
+------------
 
 To install this library, run:
 
@@ -8,15 +10,41 @@ To install this library, run:
 $ npm install dsu-ng2-weather --save
 ```
 
-## Consuming your library
+Consuming the library
+---------------------
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+You can import your library in any Angular application by running:
 
 ```bash
 $ npm install dsu-ng2-weather
 ```
 
-and then from your Angular `AppModule`:
+and then you must configure your application :
+
+### if you are using [Angular CLI](https://github.com/angular/angular-cli)
+
+1.	add `../node_modules/weather-icons/css/weather-icons.css` and `../node_modules/weather-icons/css/weather-icons-winds.css` to **style** block of *angular-cli.json*.
+
+2.	add `../node_modules/weather-icons/fonts/*.+(otf|eot|svg|ttf|woff|woff2)` to **addons** block of *angular-cli.json*.
+
+```json
+/* angular-cli.json  */
+{
+  "apps": [
+    {
+      "styles": [
+        "../node_modules/weather-icons/css/weather-icons.css"
+        "../node_modules/weather-icons/css/weather-icons-wind.css"
+      ]
+    }
+  ],
+  "addons": [
+    "../node_modules/weather-icons/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
+  ]
+}
+```
+
+To finish, you have to add below code in your Angular `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -45,15 +73,18 @@ export class AppModule { }
 
 Once your library is imported, you can use its components, directives and pipes in your Angular application:
 
-```xml
+```html
 <!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<ngw-current-weather [city]="'paris, france'"></ngw-current-weather>
+
+<!-- to refresh each one minute -->
+<ngw-current-weather [city]="'paris, france'" [refreshMin]="1"></ngw-current-weather>
+
+<ngw-current-weather [coordinates]="{lng: 4, lat: 0}"></ngw-current-weather>
 ```
 
-## Development
+Development
+-----------
 
 To generate all `*.js`, `*.js.map` and `*.d.ts` files:
 
@@ -67,6 +98,12 @@ To lint all `*.ts` files:
 $ npm run lint
 ```
 
-## License
+TODO
+----
 
-MIT © [Damien Suhard](ptitdam2001@gmail.com)
+[ ] Update documentation with usage exmples
+
+License
+-------
+
+MIT © [Damien Suhard](ptitdam2001@gmail.com) 2016
