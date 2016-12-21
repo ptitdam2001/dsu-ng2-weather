@@ -14,26 +14,28 @@ import { Observable } from 'rxjs';
   // templateUrl: './weather-prevision.component.html',
   // template: template.default,
   template: `
- <div class="title">Weather prevision</div>
- <div class="scroller" [ngStyle]="{'height': scrollStyle}">
+  <div class="title">Weather prevision</div>
+  <div class="scroller" [ngStyle]="{'height': scrollStyle}">
     <ul *ngFor="let weather of weathers">
-        <ol>{{weather.date}}</ol>
-        <li *ngFor="let item of weather.list">
-            <div class="hour">{{(item.dt * 1000) | momentFormat:'HH:mm'}}</div>
-            <div class="icon"> <i class="wi {{item?.weather[0].id | weatherNameToIcon}}"></i></div>
-            <div class="info">
-                <p><span class="temp">{{item.main.temp_max}}°c</span>&nbsp;{{item.weather[0]?.description}}</p>
-                <p>min : {{item.main.temp_min}}°c - max : {{item.main.temp_max}}°c</p>
-                <p>wind: {{item.wind.speed}} m/sec</p>
-                <p>Humidity: {{item.main.humidity}}%</p>
-                <p *ngIf="item.rain && item.rain['3h']">Rain volume: {{item.rain['3h']}} mm</p>
-                <p *ngIf="item.snow && item.snow['3h']">Snow volume: {{item.snow['3h']}}</p>
-            </div>
-        </li>
+      <ol>{{weather.date}}</ol>
+      <li *ngFor="let item of weather.list">
+        <div class="hour">{{(item.dt * 1000) | momentFormat:'HH:mm'}}</div>
+        <div class="icon">
+          <!-- <i class="wi {{item?.weather[0].id | weatherNameToIcon}}"></i> -->
+          <ng2-wi [name]="item?.weather[0].id | weatherNameToIcon"></ng2-wi>
+        </div>
+        <div class="info">
+          <p><span class="temp">{{item.main.temp_max}}°c</span>&nbsp;{{item.weather[0]?.description}}</p>
+          <p>min : {{item.main.temp_min}}°c - max : {{item.main.temp_max}}°c</p>
+          <p>wind: {{item.wind.speed}} m/sec</p>
+          <p>Humidity: {{item.main.humidity}}%</p>
+          <p *ngIf="item.rain && item.rain['3h']">Rain volume: {{item.rain['3h']}} mm</p>
+          <p *ngIf="item.snow && item.snow['3h']">Snow volume: {{item.snow['3h']}}</p>
+        </div>
+      </li>
     </ul>
- </div>`,
+  </div>`,
   // styleUrls: [
-  //   './../../../../../node_modules/weather-icons/sass/weather-icons.scss',
   //   './weather-prevision.component.scss'
   // ],
   styles: [
