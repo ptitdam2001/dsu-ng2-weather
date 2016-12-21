@@ -68,8 +68,6 @@
     top: 50%;
     width: 30%;
     transform: translateY(-50%); }
-    :host .weather-icon i {
-      font-size: 80px; }
   :host .header-bg {
     width: 100%;
     height: 100%;

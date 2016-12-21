@@ -11,25 +11,26 @@ import { Observable } from 'rxjs';
   selector: 'ngw-current-weather',
   // templateUrl: './current-weather.component.html',
   // template: template.default,
-  template: `<div class="card">
-      <div class="card-header">
-        <div class="left-side">
-          <h2 class="city">{{currentWeather?.name}}</h2>
-          <span class="currently-weather">{{currentWeather?.weather[0]?.description}}</span>
-          <div class="wind">
-          <i class="wind-icon wi wi-strong-wind"></i>{{currentWeather?.wind?.speed | meterSecToKmHour | round}}<span class="mph">km/h</span>
-          </div>
-          <span class="temperature">{{currentWeather?.main?.temp | round}}°c</span>
+  template: `
+  <div id="san-francisco" class="card">
+    <div class="card-header">
+      <div class="left-side">
+        <h2 class="city">{{currentWeather?.name}}</h2>
+        <span class="currently-weather">{{currentWeather?.weather[0]?.description}}</span>
+        <div class="wind">
+          <ng2-wi [name]="'windy'" [size]="1" class="wind-icon"></ng2-wi>
+          {{currentWeather?.wind?.speed | meterSecToKmHour | round}}<span class="mph">km/h</span>
         </div>
-        <div class="weather-icon">
-          <i class="wi {{currentWeather?.weather[0]?.id | weatherNameToIcon}}"></i>
-        </div>
-        <!--<div class="header-bg" style="background-image: url(img/san-francisco.jpg)"></div>-->
-        <div class="clearfix"></div>
+        <span class="temperature">{{currentWeather?.main?.temp | round}}°c</span>
       </div>
-    </div>`,
+      <div class="weather-icon">
+        <ng2-wi name="currentWeather?.weather[0]?.id | weatherNameToIcon" [size]="4"></ng2-wi>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+`,
   // styleUrls: [
-  //   './../../../../../node_modules/weather-icons/sass/weather-icons.scss',
   //   './current-weather.component.scss'
   // ],
   styles: [
@@ -103,8 +104,6 @@ import { Observable } from 'rxjs';
         top: 50%;
         width: 30%;
         transform: translateY(-50%); }
-        :host .weather-icon i {
-          font-size: 80px; }
       :host .header-bg {
         width: 100%;
         height: 100%;

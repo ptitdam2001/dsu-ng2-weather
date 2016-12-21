@@ -7,12 +7,14 @@
         <div class="description">
           <span class="currently-weather">{{weather?.weather[0].description}}</span>
           <div class="wind">
-            <i class="wind-icon wi wi-strong-wind"></i>{{weather?.wind.speed | meterSecToKmHour | round}}<span class="mph">km/h</span>
+            <!-- <i class="wind-icon wi wi-strong-wind"></i>{{weather?.wind.speed | meterSecToKmHour | round}}<span class="mph">km/h</span> -->
+            <ng2-wi [name]="'strong-wind'" class="wind-icon"></ng2-wi>{{weather?.wind.speed | meterSecToKmHour | round}}<span class="mph">km/h</span>
           </div>
           <span class="temperature">{{weather?.main.temp | round}}°c</span>
         </div>
         <div class="weather-icon">
-          <i class="wi {{weather?.weather[0].id | weatherNameToIcon}}"></i>
+          <!-- <i class="wi {{weather?.weather[0].id | weatherNameToIcon}}"></i> -->
+          <ng2-wi [name]="weather?.weather[0].id | weatherNameToIcon" [size]="'2.5'"></ng2-wi>
         </div>
       </div>
   </div>
