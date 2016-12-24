@@ -8,7 +8,7 @@ import { OpenWeatherMapService } from './src/service/open-weather-map.service';
 import { WeatherConfig } from './src/weather-config';
 import { CurrentWeatherComponent, WeatherArroundComponent, WeatherPrevisionComponent } from './src/component/index';
 
-import { MeterSecToKmHourPipe, RoundPipe, WeatherNameToIconPipe,
+import { MeterSecToKmHourPipe, RoundPipe,
   DegToCompassPipe, DegToCardinalPipe, MomentFormatPipe } from './src/pipe/index';
 
 
@@ -30,7 +30,6 @@ export * from './src/service/open-weather-map.service';
     WeatherPrevisionComponent,
     MeterSecToKmHourPipe,
     RoundPipe,
-    WeatherNameToIconPipe,
     DegToCompassPipe,
     DegToCardinalPipe,
     MomentFormatPipe
@@ -43,7 +42,6 @@ export * from './src/service/open-weather-map.service';
     WeatherArroundComponent,
     WeatherPrevisionComponent,
     MeterSecToKmHourPipe,
-    WeatherNameToIconPipe,
     RoundPipe,
     DegToCompassPipe,
     DegToCardinalPipe,
