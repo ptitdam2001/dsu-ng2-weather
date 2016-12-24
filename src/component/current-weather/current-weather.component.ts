@@ -24,7 +24,7 @@ import { Observable } from 'rxjs';
         <span class="temperature">{{currentWeather?.main?.temp | round}}°c</span>
       </div>
       <div class="weather-icon">
-        <ng2-wi name="currentWeather?.weather[0]?.id" [size]="4"></ng2-wi>
+        <ng2-wi [name]="currentWeather?.weather[0]?.id" [size]="4"></ng2-wi>
       </div>
       <div class="clearfix"></div>
     </div>
