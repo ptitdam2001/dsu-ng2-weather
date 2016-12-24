@@ -1,5 +1,4 @@
-dsu-ng2-weather
-===============
+An angular2 module consisting of a service and components developed from the openweathermap API.
 
 Installation
 ------------
@@ -71,7 +70,20 @@ import { WeatherModule } from 'dsu-ng2-weather';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use its components, directives, services and pipes in your Angular application:
+
+### The component ngw-current-weather
+
+it is a card where it is displayed the current weather of given city or coordinates.
+
+#### Parameters
+
+-	[city] : it is a string describing an address
+-	[coordinates] : it is an object like { lon: number, lat: number}, [optionnal]
+-	[refreshMin] : it is the time in minute of data refresh (by default it is 1 minute) [optionnal]
+-	[lang] : init the translation of text (by default it is 'en') [optionnal]
+
+#### Examples
 
 ```html
 <!-- You can now use your library component in app.component.html -->
@@ -101,7 +113,9 @@ $ npm run lint
 TODO
 ----
 
-[ ] Update documentation with usage exmples
+[ * ] Manage the output language
+
+[ ] Update documentation with usage examples
 
 License
 -------

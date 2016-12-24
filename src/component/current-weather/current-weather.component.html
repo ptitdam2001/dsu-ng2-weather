@@ -11,8 +11,7 @@
 		<span class="temperature">{{currentWeather?.main?.temp | round}}°c</span>
 		</div>
 		<div class="weather-icon">
-			<!-- <i class="wi {{currentWeather?.weather[0]?.id | weatherNameToIcon}}"></i> -->
-			<ng2-wi name="currentWeather?.weather[0]?.id | weatherNameToIcon" [size]="4"></ng2-wi>
+			<ng2-wi name="currentWeather?.weather[0]?.id" [size]="4"></ng2-wi>
 		</div>
 		<!--<div class="header-bg" style="background-image: url(img/san-francisco.jpg)"></div>-->
 		<div class="clearfix"></div>
