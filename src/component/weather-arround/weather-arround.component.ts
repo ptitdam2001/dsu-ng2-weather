@@ -24,7 +24,7 @@ import { Coordinates } from '../../service/classes';
             <span class="temperature">{{weather?.main.temp | round}}°c</span>
           </div>
           <div class="weather-icon">
-            <ng2-wi [name]="weather?.weather[0].id | weatherNameToIcon" [size]="'2.5'"></ng2-wi>
+            <ng2-wi [name]="weather?.weather[0].id" [size]="'2.5'"></ng2-wi>
           </div>
         </div>
     </div>
@@ -96,6 +96,8 @@ export class WeatherArroundComponent implements OnInit, OnChanges {
 
   @Input() coordinates: Coordinates;
   @Input() height ?: number = 0;
+  @Input() lang ?: string = 'en';
+  @Input() count ?: number = 10;
 
   private weatherArround: Array<any>;
   private listStyle: any;
@@ -115,7 +117,7 @@ export class WeatherArroundComponent implements OnInit, OnChanges {
   }
 
   private populate() {
-    this.service.getWeatherArround(this.coordinates).subscribe(
+    this.service.getWeatherArround(this.coordinates, this.count, this.lang).subscribe(
       response => this.weatherArround = response.json().list ? response.json().list : [],
       error => {
         this.weatherArround = [];
