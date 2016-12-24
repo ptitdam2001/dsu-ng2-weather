@@ -24,7 +24,7 @@ import { Observable } from 'rxjs';
         <span class="temperature">{{currentWeather?.main?.temp | round}}°c</span>
       </div>
       <div class="weather-icon">
-        <ng2-wi name="currentWeather?.weather[0]?.id | weatherNameToIcon" [size]="4"></ng2-wi>
+        <ng2-wi name="currentWeather?.weather[0]?.id" [size]="4"></ng2-wi>
       </div>
       <div class="clearfix"></div>
     </div>
@@ -149,6 +149,7 @@ export class CurrentWeatherComponent implements OnInit, OnChanges {
   @Input() city: string;
   @Input() coordinates ?: Coordinates;
   @Input() refreshMin ?: number = 1;
+  @Input() lang ?: string = 'en';
 
   public currentWeather: any;
 
@@ -160,6 +161,10 @@ export class CurrentWeatherComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: any) {
     let options = new WeatherSearchParams();
+
+    if (changes.lang && changes.lang.currentValue) {
+      options.lang = this.lang;
+    }
 
     if (changes.city && changes.city.currentValue) {
       options.city = this.city;

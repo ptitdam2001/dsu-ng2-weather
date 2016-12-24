@@ -21,8 +21,7 @@ import { Observable } from 'rxjs';
       <li *ngFor="let item of weather.list">
         <div class="hour">{{(item.dt * 1000) | momentFormat:'HH:mm'}}</div>
         <div class="icon">
-          <!-- <i class="wi {{item?.weather[0].id | weatherNameToIcon}}"></i> -->
-          <ng2-wi [name]="item?.weather[0].id | weatherNameToIcon"></ng2-wi>
+          <ng2-wi [name]="item?.weather[0].id"></ng2-wi>
         </div>
         <div class="info">
           <p><span class="temp">{{item.main.temp_max}}°c</span>&nbsp;{{item.weather[0]?.description}}</p>
@@ -116,6 +115,7 @@ export class WeatherPrevisionComponent implements OnInit, OnChanges {
   @Input() coordinates ?: Coordinates;
   @Input() height ?: number = 300;
   @Input() refreshMin ?: number = 1;
+  @Input() lang ?: string = 'en';
 
   public weathers: Array<any>;
   private scrollStyle: string;
@@ -128,6 +128,10 @@ export class WeatherPrevisionComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: any) {
     let options = new WeatherSearchParams();
+
+    if (changes.lang && changes.lang.currentValue) {
+      options.lang = this.lang;
+    }
 
     if (changes.city && changes.city.currentValue) {
       options.city = this.city;
