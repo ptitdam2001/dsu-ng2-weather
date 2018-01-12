@@ -1,0 +1,52 @@
+:host {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: block;
+  background: #fff; }
+  :host .card-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-y: scroll; }
+    :host .card-list .card-list-item {
+      display: block;
+      padding: 10px; }
+      :host .card-list .card-list-item h2 {
+        text-align: left;
+        font-weight: bold;
+        font-size: .9em;
+        margin-top: 0; }
+      :host .card-list .card-list-item .card-content {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #ababab; }
+        :host .card-list .card-list-item .card-content .description {
+          width: 50%;
+          font-size: .8em; }
+          :host .card-list .card-list-item .card-content .description .wind .wind-icon {
+            padding-right: 5px; }
+          :host .card-list .card-list-item .card-content .description .temperature {
+            font-size: 2em;
+            font-weight: 100;
+            margin-top: .5em;
+            margin-bottom: .5em;
+            display: block;
+            line-height: 1em; }
+        :host .card-list .card-list-item .card-content .weather-icon {
+          width: 50%;
+          text-align: center;
+          padding: 10px 5px; }
+  :host .title {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    background: #3D6AA2;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+
+/*# sourceMappingURL=weather-arround.component.css.map */

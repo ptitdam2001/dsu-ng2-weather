@@ -1,0 +1,68 @@
+:host {
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: block; }
+  :host .title {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px;
+    font-weight: bold;
+    background: #3D6AA2;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+  :host .scroller {
+    height: 300px;
+    overflow-y: scroll; }
+    :host .scroller ul {
+      padding: 0;
+      margin: 0; }
+      :host .scroller ul ol, :host .scroller ul li {
+        min-height: 35px;
+        line-height: 35px; }
+      :host .scroller ul ol {
+        background: #555555;
+        color: #ffffff;
+        padding: 5px 10px; }
+      :host .scroller ul li {
+        list-style: none;
+        border-top: 1px solid #999999;
+        display: flex;
+        flex-direction: row; }
+        :host .scroller ul li .hour {
+          width: 10%;
+          padding: 0 5px;
+          font-weight: bold;
+          font-size: 1.1em;
+          text-align: center; }
+        :host .scroller ul li .icon {
+          width: 10%; }
+          :host .scroller ul li .icon i {
+            font-size: 200%;
+            display: block;
+            height: 100%;
+            padding: 10%;
+            line-height: 90%; }
+          :host .scroller ul li .icon i:hover {
+            color: red; }
+        :host .scroller ul li .info {
+          width: 80%;
+          padding: 5px; }
+          :host .scroller ul li .info .temp {
+            display: inline-block;
+            background: orange;
+            border-radius: 3px;
+            padding: 1px 3px; }
+          :host .scroller ul li .info p {
+            padding: 0;
+            margin: 3px 0; }
+        :host .scroller ul li .left {
+          width: 80%;
+          display: flex; }
+      :host .scroller ul li:first-child {
+        border-top: none; }
+
+/*# sourceMappingURL=weather-prevision.component.css.map */
